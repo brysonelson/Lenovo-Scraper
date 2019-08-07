@@ -19,6 +19,7 @@ const sn = 'R9-0GR701';
     await page.keyboard.type(sn);
     await page.click(searchButton)
 
+    //wait to make sure that the page fully loads
     await page.waitFor(5000);
     // const moreInfoChevron = ('span.icon.icon-s-down');
     await page.evaluate(() => {
@@ -28,9 +29,7 @@ const sn = 'R9-0GR701';
         for (i = 0; i < moreInfoArrows.length; i++) {
             $(moreInfoArrows[i]).click()
         }
-        // return moreInfoArrows.map(arrow => {
-
-        // })
+       
     });
 
     await page.evaluate(() => {
